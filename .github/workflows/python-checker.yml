@@ -26,6 +26,7 @@ jobs:
           
       - name: linter - black
         run: |
+          ls
           poetry run black --check library
 
       - name: linter - isort
