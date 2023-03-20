@@ -24,11 +24,6 @@ jobs:
           cd library
           poetry install
           
- 
-  run-python-checker:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
       - name: linter - black
         run: |
           poetry run black --check library
