@@ -1,0 +1,43 @@
+name: Python package
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Action Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.10
+
+      - name: Install Poetry
+        run: |
+          pip install -U pip
+          pip install poetry
+
+      - name: Install dependencies
+        run: |
+          poetry install
+          cd library
+          
+      - name: linter - black
+        run: |
+          poetry run black --check library
+
+      - name: linter - isort
+        run: |
+          poetry run isort --check library
+
+      - name: linter - flake8
+        run: |
+          poetry run flake8 library
+
+      - name: Test - pytest
+        run: |
+          poetry run pytest
+          
