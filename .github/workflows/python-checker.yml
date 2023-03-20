@@ -4,7 +4,6 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     steps:
       - name: Action Checkout
@@ -24,7 +23,11 @@ jobs:
         run: |
           poetry install
           cd library
-          
+ 
+  run-python-checkr:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:      
       - name: linter - black
         run: |
           poetry run black --check library
