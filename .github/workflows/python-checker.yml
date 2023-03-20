@@ -29,10 +29,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: enter project path
-        run: |
-          cd library
-
       - name: linter - black
         run: |
           poetry run black --check library
