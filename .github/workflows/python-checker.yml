@@ -15,28 +15,19 @@ jobs:
           python-version: 3.11
 
       - name: Install Poetry
-        run: |
-          pip install -U pip
-          pip install poetry
+        uses: Gr1N/setup-poetry@v8
 
       - name: Install dependencies
-        run: |
-          cd library
-          poetry install
+        run: poetry install
           
       - name: linter - black
-        run: |
-          ls
-          poetry run black --check library
+        run: poetry run black --check library
 
       - name: linter - isort
-        run: |
-          poetry run isort --check library
+        run: poetry run isort --check library
 
       - name: linter - flake8
-        run: |
-          poetry run flake8 library
+        run: poetry run flake8 library
 
       - name: Test - pytest
-        run: |
-          poetry run pytest
+        run: poetry run pytest
