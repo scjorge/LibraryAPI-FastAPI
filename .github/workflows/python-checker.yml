@@ -21,6 +21,7 @@ jobs:
 
       - name: Install dependencies
         run: |
+          cd library
           poetry install
           
  
@@ -31,7 +32,7 @@ jobs:
       - name: enter project path
         run: |
           cd library
-          
+
       - name: linter - black
         run: |
           poetry run black --check library
