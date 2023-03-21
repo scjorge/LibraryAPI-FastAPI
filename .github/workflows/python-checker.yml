@@ -5,6 +5,9 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./library
     steps:
       - name: Action Checkout
         uses: actions/checkout@v3
