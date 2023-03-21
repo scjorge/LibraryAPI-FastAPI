@@ -9,6 +9,4 @@ async def root():
     Hello World
     """
 
-
-    
     return {"message": "hello world"}
