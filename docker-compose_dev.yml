@@ -4,12 +4,12 @@ services:
   web:
     build: ./library
     image: fastapi_dev:latest
-    container_name: api_dev
+    container_name: fast_api_dev
     env_file: .env_develop
     #command: sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     restart: always
-    ports:
-      - 8000:8000
+    #ports:
+    #  - 8000:8000
     #depends_on:
     #  - db
     volumes:
