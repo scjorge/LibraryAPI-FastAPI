@@ -1,0 +1,33 @@
+repos:
+
+-   repo: local
+    hooks:
+    -   id: black
+        name: black
+        entry: poetry -C library run black --check
+        language: system
+        types: [python]
+
+-   repo: local
+    hooks:
+    -   id: isort
+        name: isort
+        entry: poetry -C library run isort --check
+        language: system
+        types: [python]
+
+-   repo: local
+    hooks:
+    -   id: mypy
+        name: mypy
+        entry: poetry -C library run mypy --exclude library
+        language: system
+        types: [python]
+
+-   repo: local
+    hooks:
+    -   id: flake8
+        name: flake8
+        entry: poetry -C library run flake8
+        language: system
+        types: [python]

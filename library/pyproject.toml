@@ -20,6 +20,8 @@ black = "^23.1.0"
 isort = "^5.12.0"
 pydocstyle = "^6.3.0"
 ignr = "^2.2"
+pre-commit = "^3.2.0"
+mypy = "^1.1.1"
 
 [build-system]
 requires = ["poetry-core"]
