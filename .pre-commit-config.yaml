@@ -20,7 +20,7 @@ repos:
     hooks:
     -   id: mypy
         name: mypy
-        entry: poetry -C library run mypy --exclude library
+        entry: poetry -C library run mypy
         language: system
         types: [python]
 
